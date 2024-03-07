@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Recherches</title>
+</head>
+<body>
+
+<h1>Tableau de Recherches</h1>
+
+<table border="1">
+    <tr>
+        <th>Dates</th>
+        <th>Recherches</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="dates"></td>
+        <td><input type="text" id="recherches"></td>
+    </tr>
+</table>
+
+<script>
+    // Vous pouvez exécuter cette fonction chaque fois que vous voulez ajouter une nouvelle ligne au tableau
+    function ajouterLigne() {
+        var dates = document.getElementById('dates').value;
+        var recherches = document.getElementById('recherches').value;
+
+        // Création d'une nouvelle ligne
+        var table = document.querySelector('table');
+        var newRow = table.insertRow(-1); // -1 pour ajouter à la fin du tableau
+
+        // Insertion des cellules avec les valeurs saisies
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        cell1.innerHTML = dates;
+        cell2.innerHTML = recherches;
+
+        // Réinitialisation des champs
+        document.getElementById('dates').value = '';
+        document.getElementById('recherches').value = '';
+    }
+</script>
+
+<button onclick="ajouterLigne()">Ajouter une ligne</button>
+
+</body>
+</html>
